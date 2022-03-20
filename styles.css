@@ -15,7 +15,7 @@ body {
     color: #dae634;
   }
 
-{
+
  .nav-item {
   font-weight: 600 !important;
 }
@@ -23,7 +23,6 @@ body {
   margin-right: 30px;
 }
 
-}
  .btn-order {
   width:130px;
   height: 40px;
