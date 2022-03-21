@@ -37,9 +37,9 @@ Pizza.prototype.pizzaPrice = function () {
 
 //Creating the pizza Objects
 const availablePizzas = [
-    new Pizza(1, "Pepperoni", 'large', './images/piza1.png', 1200),
-    new Pizza(2, "Chicken Tikka", 'large', './images/piza1.png', 1200),
-    new Pizza(3, "Hawaiian", 'large', './images/piza1.png', 1200)
+    new Pizza(1, "Pepperoni", 'large', './images/pizza.png', 1100),
+    new Pizza(2, "Chicken Tikka", 'large', './images/pizza.png', 1100),
+    new Pizza(3, "Hawaiian", 'large', './images/pizza.png', 1100)
 ]
 
 
@@ -153,11 +153,11 @@ function getDeliveryPrice() {
 
 function checkSize() {
     if (size === 'large') {
-        sizePrice = 1400
+        sizePrice = 1100
     } else if (size === 'medium') {
-        sizePrice = 1200
+        sizePrice = 900
     } else {
-        sizePrice = 1000
+        sizePrice = 500
     }
 
 
@@ -167,12 +167,12 @@ function checkSize() {
 
 function checkCrust() {
     if (crust === 'crispy') {
-        crustPrice = 250
+        crustPrice = 300
     } else if (crust === 'stuffed') {
 
-        crustPrice = 250
+        crustPrice = 200
     } else {
-        crustPrice = 100
+        crustPrice = 150
     }
 
 }
@@ -211,7 +211,7 @@ function createPizza(pizza) {
     <div id="pizzaCard" class="col-md-3">
                     <div class="card mt-5">
                         <div class="cardHeader">
-                            <img src="${piza1.image}" height="180" width="220" alt="" />
+                            <img src="${pizza.image}" height="180" width="220" alt="" />
                         </div>
                         <div class="cardFooter">
                             <h4 class="card-title mt-3 mx-2 fw-bold   ">${pizza.name} Pizza</h4>
