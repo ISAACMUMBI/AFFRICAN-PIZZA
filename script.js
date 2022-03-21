@@ -37,9 +37,9 @@ Pizza.prototype.pizzaPrice = function () {
 
 //Creating the pizza Objects
 const availablePizzas = [
-    new Pizza(1, "Pepperoni", 'large', './images/pizza.png', 1100),
-    new Pizza(2, "Chicken Tikka", 'large', './images/pizza.png', 1100),
-    new Pizza(3, "Hawaiian", 'large', './images/pizza.png', 1100)
+    new Pizza(1, "Pepperoni", 'large', './images/pizza.png', 1200),
+    new Pizza(2, "Chicken Tikka", 'large', './images/pizza.png', 1200),
+    new Pizza(3, "Hawaiian", 'large', './images/pizza.png', 1200)
 ]
 
 
@@ -136,7 +136,7 @@ function getDeliveryPrice() {
         fullName = $("#fullNname").val()
         userLoc = $("#userLoc").val()
         phone = $("#phone").val()
-        deliveryPrice = 300
+        deliveryPrice = 250
     } else {
         deliveryPrice = 0
     }
@@ -153,11 +153,11 @@ function getDeliveryPrice() {
 
 function checkSize() {
     if (size === 'large') {
-        sizePrice = 1100
+        sizePrice = 1200
     } else if (size === 'medium') {
-        sizePrice = 900
+        sizePrice = 1000
     } else {
-        sizePrice = 500
+        sizePrice = 800
     }
 
 
@@ -167,12 +167,12 @@ function checkSize() {
 
 function checkCrust() {
     if (crust === 'crispy') {
-        crustPrice = 300
+        crustPrice = 250
     } else if (crust === 'stuffed') {
 
-        crustPrice = 200
-    } else {
         crustPrice = 150
+    } else {
+        crustPrice = 100
     }
 
 }
@@ -181,9 +181,9 @@ function checkCrust() {
 
 function checkTopping() {
     if (topping === 'garlic') {
-        toppingPrice = 150
-    } else if (topping === 'mushroom') {
         toppingPrice = 100
+    } else if (topping === 'mushroom') {
+        toppingPrice = 80
     } else {
         toppingPrice = 50
     }
@@ -231,7 +231,7 @@ function createPizza(pizza) {
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div> 
     `
 }
 

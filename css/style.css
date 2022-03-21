@@ -80,9 +80,9 @@ body {
   height: 230px;
   margin-bottom: 40px !important;
 
-  background-color: white;
+  background-color: rgb(20, 2, 2);
   border-radius: 10px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(241, 243, 245, 0.2) 0px 8px 24px;
 }
 .cardHeader {
   background-color: rgba(228, 237, 221, 0.62);
