@@ -37,9 +37,9 @@ Pizza.prototype.pizzaPrice = function () {
 
 //Creating the pizza Objects
 const availablePizzas = [
-    new Pizza(1, "Pepperoni", 'large', './images/piza1.png', 1250),
-    new Pizza(2, "Chicken Tikka", 'large', './images/piza1.png', 1250),
-    new Pizza(3, "Hawaiian", 'large', './images/piza1.png', 1250
+    new Pizza(1, "Pepperoni", 'large', './images/piza1.png', 1200),
+    new Pizza(2, "Chicken Tikka", 'large', './images/piza1.png', 1200),
+    new Pizza(3, "Hawaiian", 'large', './images/piza1.png', 1200)
 ]
 
 
@@ -83,7 +83,7 @@ $("#btn-click").on("click", function (e) {
 
         addToCart(cart)
         $("#count").text(`${counter}`)
-        successAlert("Pizza Added to Crate Successfully &#x1F60A;")
+        successAlert("Pizza Added to Cart Successfully &#x1F60A;")
         $(window).scrollTop(0);
        
     }
@@ -106,7 +106,7 @@ $("#btn-delivery").on("click", function (e) {
 
     $(".delivery").hide()
     getDeliveryPrice()
-h 
+
 })
 
 
@@ -136,7 +136,7 @@ function getDeliveryPrice() {
         fullName = $("#fullNname").val()
         userLoc = $("#userLoc").val()
         phone = $("#phone").val()
-        deliveryPrice = 200
+        deliveryPrice = 300
     } else {
         deliveryPrice = 0
     }
@@ -153,11 +153,11 @@ function getDeliveryPrice() {
 
 function checkSize() {
     if (size === 'large') {
-        sizePrice = 1250
+        sizePrice = 1400
     } else if (size === 'medium') {
-        sizePrice = 950
+        sizePrice = 1200
     } else {
-        sizePrice = 550
+        sizePrice = 1000
     }
 
 
@@ -167,10 +167,10 @@ function checkSize() {
 
 function checkCrust() {
     if (crust === 'crispy') {
-        crustPrice = 300
+        crustPrice = 250
     } else if (crust === 'stuffed') {
 
-        crustPrice = 200
+        crustPrice = 250
     } else {
         crustPrice = 100
     }
@@ -181,112 +181,12 @@ function checkCrust() {
 
 function checkTopping() {
     if (topping === 'garlic') {
-        toppingPrice = 2000
-    } else if (topping === 'mushroom') {
         toppingPrice = 150
-    } else {
+    } else if (topping === 'mushroom') {
         toppingPrice = 100
+    } else {
+        toppingPrice = 50
     }
-
-    //Append pizzas to the menu section
-function appendPizzasToMenu(availablePizzas) {
-    const menu = $(".menu")
-    menu.html("")
-    availablePizzas.forEach((pizza) => {
-        menu.append(affricanpizza(pizza))
-
-    });
-
-
-}
-
-//creating a pizza object UI
-function affricanPizza(pizza) {
-    return `
-    <div id="pizzaCard" class="col-md-3">
-                    <div class="card mt-5">
-                        <div class="cardHeader">
-                            <img src="${pizza.image}" height="200" width="300" alt="" />
-                        </div>
-                        <div class="cardFooter">
-                            <h4 class="card-title mt-3 mx-2 fw-bold   ">${pizza.name} Pizza</h4>
-                            <div class="ratings my-4 mx-2 ">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <h4 class="fw-bold text-success">4.5</h4>
-                            </div>
-                            <div class="card-price mx-3" id="price">
-                                <h4 id="featured-price" class="fw-bold text-success">Ksh ${pizza.price}</h4> 
-                                <img height="20" class="iconCart" src="./images/icons/cart.svg" id="cart-icon" onClick = "getSelectedPizza(${pizza.id})" data-bs-toggle="modal" data-bs-target="#addToCartModal"  alt=""
-                                  >
-
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-    `
-}
-
-//create a pizza objective iu
-return`
-<div id="pizzaCard"`class="col-md-3">
-<img src="${piza1.img}"
-
-
-// get the unique clicked pizza
-function getSelectedPizza(id) {
-    single = availablePizzas.find((pizza) => pizza.id === id);
-    single.price = 0
-    console.log(single);
-
-}
-
-function successAlert(msg) {
-$("#alerts").append(`
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  ${msg}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-`)
-}
-
-//Add to cart Function
-
-
-function addToCart(cart) {
-    const tableRow = $("#table-row");
-    const tableRow2 = $("#table-row2");
-
-    counter++;
-
-
-    tableRow.html("")
-    cart.forEach((x) => {
-        tableRow.append(addItem(x))
-    })
-    tableRow2.html("")
-    cart.forEach((x) => {
-        tableRow2.append(addItem(x))
-    })
-}
-
-//create cart item
-function addItem(x) {
-    return `
-    <tr>
-    <th scope="row">1</th>
-    <td>${x.name}</td>
-    <td>${x.number}</td>
-    <td>${x.size}</td>
-    <td>${x.crust}</td>
-    <td>${x.topping}</td>
-    <td>Ksh ${x.price}</td>
-</tr>
-    `
-}
 
 }
 
@@ -311,7 +211,7 @@ function createPizza(pizza) {
     <div id="pizzaCard" class="col-md-3">
                     <div class="card mt-5">
                         <div class="cardHeader">
-                            <img src="${pizza.image}" height="180" width="220" alt="" />
+                            <img src="${piza1.image}" height="180" width="220" alt="" />
                         </div>
                         <div class="cardFooter">
                             <h4 class="card-title mt-3 mx-2 fw-bold   ">${pizza.name} Pizza</h4>

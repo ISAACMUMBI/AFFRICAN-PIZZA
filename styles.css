@@ -147,7 +147,7 @@ body {
   
   #bg-section {
     height: 300px;
-    background-image: url("../images/piza2.jpg");
+    background-image: url("../images/bg-footer.jpg");
     background-size: cover;
     border-radius: 20px;
     background-repeat: no-repeat;
@@ -193,13 +193,11 @@ body {
     display: flex;
     justify-content: space-around;
   }
-
-}
 .social-icons i {
   font-size: 24px;
   color: #5eb172;
 }
-.footer-logo h2 {
+.footer-logo h2 {   
   margin-top: 0;
   font-weight: 800;
 }
