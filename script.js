@@ -83,7 +83,7 @@ $("#btn-click").on("click", function (e) {
 
         addToCart(cart)
         $("#count").text(`${counter}`)
-        successAlert("Pizza Added to Cart Successfully &#x1F60A;")
+        successAlert("PIZZA ORDERED  Successfully &#x1F60A;")
         $(window).scrollTop(0);
        
     }
@@ -156,7 +156,7 @@ function checkSize() {
         sizePrice = 1200
     } else if (size === 'medium') {
         sizePrice = 1000
-    } else {
+    } else {size === 'small'
         sizePrice = 800
     }
 
@@ -205,13 +205,13 @@ function appendPizzasToMenu(availablePizzas) {
 
 }
 
-//creating a pizza object UI
+  //creating a pizza object UI
 function createPizza(pizza) {
     return `
     <div id="pizzaCard" class="col-md-3">
                     <div class="card mt-5">
                         <div class="cardHeader">
-                            <img src="${pizza.image}" height="180" width="220" alt="" />
+                            <img src="${pizza.image}" height="200" width="300" alt="" />
                         </div>
                         <div class="cardFooter">
                             <h4 class="card-title mt-3 mx-2 fw-bold   ">${pizza.name} Pizza</h4>
@@ -221,7 +221,7 @@ function createPizza(pizza) {
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <h4 class="fw-bold text-success">4.5</h4>
+                                <h4 class="fw-bold text-success"></h4>
                             </div>
                             <div class="card-price mx-3" id="price">
                                 <h4 id="featured-price" class="fw-bold text-success">Ksh ${pizza.price}</h4> 
@@ -236,7 +236,7 @@ function createPizza(pizza) {
 }
 
 
-// get the unique clicked pizza
+   //get the unique clicked pizza
 function getSelectedPizza(id) {
     single = availablePizzas.find((pizza) => pizza.id === id);
     single.price = 0
@@ -287,3 +287,5 @@ function addItem(x) {
 </tr>
     `
 }
+
+
